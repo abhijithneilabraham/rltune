@@ -1,0 +1,31 @@
+# Adapted from the pinned prime-rl reverse-text recipe. GPU execution pending.
+max_steps = 20
+seq_len = 512
+[model]
+name = "Qwen/Qwen3-0.6B"
+[orchestrator]
+batch_size = 128
+[orchestrator.train]
+group_size = 16
+[orchestrator.train.sampling]
+max_completion_tokens = 32
+[[orchestrator.train.source]]
+name = "arithmetic-train"
+env.taskset.id = "rltune-arithmetic"
+env.taskset.split = "train"
+env.agent.harness.id = "null"
+env.agent.runtime.type = "subprocess"
+[orchestrator.eval]
+interval = 5
+[orchestrator.eval.sampling]
+max_completion_tokens = 32
+[[orchestrator.eval.source]]
+name = "arithmetic-eval"
+env.taskset.id = "rltune-arithmetic"
+env.taskset.split = "eval"
+env.agent.harness.id = "null"
+env.agent.runtime.type = "subprocess"
+[trainer.optim]
+lr = 3e-6
+[ckpt]
+[inference]

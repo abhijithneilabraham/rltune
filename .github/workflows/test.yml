@@ -1,0 +1,25 @@
+name: CPU learning lab
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.12'
+      - run: uv sync --extra dev --locked
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run pytest -q
+  verifiers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.12'
+      - run: uv sync --extra dev --extra prime --locked
+      - run: uv pip install --no-deps -e integrations/prime
+      - run: uv run --no-sync pytest -q tests/test_verifiers_integration.py
+      - run: uv run --no-sync vf-validate rltune-arithmetic -n 2 --only-setup --runtime.type subprocess -o runs/verifiers-validation

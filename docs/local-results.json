@@ -1,0 +1,143 @@
+{
+  "python": "3.12.3",
+  "torch": "2.15.0",
+  "platform": "Darwin-arm64",
+  "device": "cpu",
+  "steps": 200,
+  "seed": 7,
+  "eval_pairs": 20,
+  "runs": {
+    "sft": {
+      "config": {
+        "method": "sft",
+        "seed": 7,
+        "batch_size": 32,
+        "group_size": 16,
+        "lr": 0.01,
+        "kl_coef": 0.01,
+        "epochs": 2
+      },
+      "first": {
+        "step": 1,
+        "policy_version": 1,
+        "loss": 2.9658215045928955,
+        "reward": null,
+        "eval_accuracy": 0.05000000074505806,
+        "reference_kl": 0.05519118160009384,
+        "clip_fraction": 0.0,
+        "grad_norm": 0.7370880246162415,
+        "initial_eval": 0.10000000149011612
+      },
+      "last": {
+        "step": 200,
+        "policy_version": 200,
+        "loss": 0.3984406888484955,
+        "reward": null,
+        "eval_accuracy": 0.8999999761581421,
+        "reference_kl": 2.218946933746338,
+        "clip_fraction": 0.0,
+        "grad_norm": 0.7554413080215454,
+        "initial_eval": 0.10000000149011612
+      }
+    },
+    "dpo": {
+      "config": {
+        "method": "dpo",
+        "seed": 7,
+        "batch_size": 32,
+        "group_size": 16,
+        "lr": 0.01,
+        "kl_coef": 0.01,
+        "epochs": 2
+      },
+      "first": {
+        "step": 1,
+        "policy_version": 1,
+        "loss": 0.6931471824645996,
+        "reward": null,
+        "eval_accuracy": 0.05000000074505806,
+        "reference_kl": 0.03734159469604492,
+        "clip_fraction": 0.0,
+        "grad_norm": 0.038866523653268814,
+        "initial_eval": 0.10000000149011612
+      },
+      "last": {
+        "step": 200,
+        "policy_version": 200,
+        "loss": 0.19617624580860138,
+        "reward": null,
+        "eval_accuracy": 0.44999998807907104,
+        "reference_kl": 2.319199562072754,
+        "clip_fraction": 0.0,
+        "grad_norm": 0.21433903276920319,
+        "initial_eval": 0.10000000149011612
+      }
+    },
+    "grpo": {
+      "config": {
+        "method": "grpo",
+        "seed": 7,
+        "batch_size": 32,
+        "group_size": 16,
+        "lr": 0.01,
+        "kl_coef": 0.01,
+        "epochs": 2
+      },
+      "first": {
+        "step": 1,
+        "policy_version": 1,
+        "loss": -0.020212668925523758,
+        "reward": 0.05078125,
+        "eval_accuracy": 0.05000000074505806,
+        "reference_kl": 0.07320356369018555,
+        "clip_fraction": 0.701171875,
+        "grad_norm": 0.07512277364730835,
+        "initial_eval": 0.10000000149011612
+      },
+      "last": {
+        "step": 200,
+        "policy_version": 200,
+        "loss": 0.027530182152986526,
+        "reward": 0.80859375,
+        "eval_accuracy": 0.6499999761581421,
+        "reference_kl": 2.823789119720459,
+        "clip_fraction": 0.0,
+        "grad_norm": 0.2734333574771881,
+        "initial_eval": 0.10000000149011612
+      }
+    },
+    "ppo": {
+      "config": {
+        "method": "ppo",
+        "seed": 7,
+        "batch_size": 32,
+        "group_size": 16,
+        "lr": 0.01,
+        "kl_coef": 0.01,
+        "epochs": 2
+      },
+      "first": {
+        "step": 1,
+        "policy_version": 1,
+        "loss": 0.28350839018821716,
+        "reward": 0.05078125,
+        "eval_accuracy": 0.05000000074505806,
+        "reference_kl": 0.02164515107870102,
+        "clip_fraction": 0.306640625,
+        "grad_norm": 2.9454054832458496,
+        "initial_eval": 0.10000000149011612
+      },
+      "last": {
+        "step": 200,
+        "policy_version": 200,
+        "loss": 0.049694932997226715,
+        "reward": 0.587890625,
+        "eval_accuracy": 0.3499999940395355,
+        "reference_kl": 2.8119165897369385,
+        "clip_fraction": 0.005859375,
+        "grad_norm": 0.23741263151168823,
+        "initial_eval": 0.10000000149011612
+      }
+    }
+  }
+}

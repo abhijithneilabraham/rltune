@@ -1,0 +1,6 @@
+{
+  "reviewed": "2026-11-06",
+  "slime": {"url": "https://github.com/THUDM/slime.git", "commit": "79aa41a884ab0bf65222c94418f6357d3c31192b"},
+  "prime-rl": {"url": "https://github.com/PrimeIntellect-ai/prime-rl.git", "commit": "c82ef259418aa9d21159380b2b811cbca023befa"},
+  "verifiers": {"url": "https://github.com/PrimeIntellect-ai/verifiers.git", "commit": "897dd5f84bb8745e2f6705bcacf0f919ed8ce40c"}
+}
